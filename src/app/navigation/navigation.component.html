@@ -1,0 +1,7 @@
+<ul class="list">
+  <li *ngFor="let page of pages">
+    <a class="list-item" routerLink="{{ page.slug }}">
+      <span>{{ page.name }}</span>
+    </a>
+  </li>
+</ul>

@@ -1,0 +1,64 @@
+{
+  "pages": [
+    {
+      "slug": "",
+      "name": "Home",
+      "layers": [
+        {
+          "type": "a",
+          "href": "#/",
+          "innerHTML": "Home",
+          "style": {
+            "background-color": "red",
+            "height": "20%",
+            "left": "5%",
+            "top": "5%",
+            "width": "20%"
+          }
+        },
+        {
+          "type": "a",
+          "href": "#/kitchen",
+          "innerHTML": "Kitchen",
+          "style": {
+            "background-color": "blue",
+            "height": "20%",
+            "left": "50%",
+            "top": "40%",
+            "width": "20%"
+          }
+        }
+      ]
+    },
+    {
+      "slug": "kitchen",
+      "name": "Kitchen",
+      "layers": [
+        {
+          "type": "a",
+          "href": "#/",
+          "innerHTML": "Home",
+          "style": {
+            "background-color": "red",
+            "height": "10%",
+            "left": "10%",
+            "top": "10%",
+            "width": "10%"
+          }
+        },
+        {
+          "type": "a",
+          "href": "#/kitchen",
+          "innerHTML": "Kitchen",
+          "style": {
+            "background-color": "blue",
+            "height": "30%",
+            "left": "40%",
+            "top": "30%",
+            "width": "30%"
+          }
+        }
+      ]
+    }
+  ]
+}
