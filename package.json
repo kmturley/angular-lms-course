@@ -1,13 +1,15 @@
 {
   "name": "angular-lms-course",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
+    "start:build": "http-server dist/angular-lms-course",
+    "build": "ng build --prod --base-href=./ && npm run zip",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e"
+    "e2e": "ng e2e",
+    "zip": "cd dist/angular-lms-course; zip -r ../archive.zip ."
   },
   "private": true,
   "dependencies": {

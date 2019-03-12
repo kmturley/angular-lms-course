@@ -6,6 +6,10 @@ import { ApiService } from '../shared/api.service';
 export class Page {
   data: {
     name: string;
+    description: string;
+    bgImage: string;
+    pathNext: string;
+    pathPrev: string;
   };
   path: string;
   type: string;
@@ -26,7 +30,7 @@ export class PageComponent implements OnInit {
 
   ngOnInit() {
     this.route.data.subscribe((routeData) => {
-      this.api.get('/assets/json/navigation.json', 'pages').subscribe(pages => {
+      this.api.get('assets/json/navigation.json', 'pages').subscribe(pages => {
         this.page = pages.filter((page: Page) => {
           return page.data.name === routeData.name;
         })[0];

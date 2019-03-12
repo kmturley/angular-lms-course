@@ -24,7 +24,7 @@ export class NavigationComponent implements OnInit {
       routes.push({
         pathMatch: 'full',
         path: page.path,
-        loadChildren: `../${page.type}/${page.type}.module#${page.type.charAt(0).toUpperCase() + page.type.slice(1)}Module`,
+        loadChildren: `./${page.type}/${page.type}.module#${page.type.charAt(0).toUpperCase() + page.type.slice(1)}Module`,
         data: page.data
       });
     });

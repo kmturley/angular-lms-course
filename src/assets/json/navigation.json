@@ -6,7 +6,7 @@
       "data" : {
         "name": "Home",
         "description": "Everything under one roof",
-        "bgImage": "/assets/images/home.jpg",
+        "bgImage": "assets/images/home.jpg",
         "pathNext": "/kitchen"
       }
     },
@@ -16,7 +16,7 @@
       "data" : {
         "name": "Kitchen",
         "description": "Delicious food is made here",
-        "bgImage": "/assets/images/kitchen.jpg",
+        "bgImage": "assets/images/kitchen.jpg",
         "pathNext": "/garden",
         "pathPrev": "/"
       }
@@ -27,7 +27,7 @@
       "data" : {
         "name": "Garden",
         "description": "Looking at nature",
-        "bgImage": "/assets/images/garden.jpg",
+        "bgImage": "assets/images/garden.jpg",
         "pathNext": "/bathroom",
         "pathPrev": "/kitchen"
       }
@@ -38,7 +38,7 @@
       "data" : {
         "name": "Bathroom",
         "description": "Get ready here!",
-        "bgImage": "/assets/images/bathroom.jpg",
+        "bgImage": "assets/images/bathroom.jpg",
         "pathPrev": "/garden"
       }
     }

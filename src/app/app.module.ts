@@ -10,7 +10,7 @@ import { NavigationComponent } from './navigation/navigation.component';
 
 export function init(apiService: ApiService) {
   return () => new Promise((resolve, reject) => {
-    apiService.get('/assets/json/navigation.json', 'pages').subscribe((data) => {
+    apiService.get('assets/json/navigation.json', 'pages').subscribe((data) => {
       resolve(data);
     }, (err) => {
       reject(err);

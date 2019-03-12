@@ -24,6 +24,17 @@ View the frontend at:
     http://localhost:4200/
 
 
+## Build
+
+Build and zip up a production version:
+
+    npm run build
+
+Altenatively building with a non-relative base url:
+
+    ng build --prod --base-href=https://www.domain.com
+
+
 ## Directory structure
 
     /src                      --> Frontend source files
