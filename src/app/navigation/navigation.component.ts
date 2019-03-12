@@ -23,11 +23,9 @@ export class NavigationComponent implements OnInit {
     this.pages.forEach((page: Page) => {
       routes.push({
         pathMatch: 'full',
-        path: page.slug,
-        loadChildren: '../page/page.module#PageModule',
-        data: {
-          name: page.name
-        }
+        path: page.path,
+        loadChildren: `../${page.type}/${page.type}.module#${page.type.charAt(0).toUpperCase() + page.type.slice(1)}Module`,
+        data: page.data
       });
     });
     this.router.resetConfig(routes);

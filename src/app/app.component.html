@@ -1,2 +1,4 @@
 <app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<div [@routerTransition]="prepareRoute(outlet)" >
+  <router-outlet #outlet="outlet"></router-outlet>
+</div>

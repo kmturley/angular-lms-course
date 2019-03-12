@@ -1,0 +1,39 @@
+.content {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.image {
+  max-width: 100%;
+}
+
+.panel {
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 2px 1px -1px rgba(0,0,0,.2), 0 1px 1px 0 rgba(0,0,0,.14), 0 1px 3px 0 rgba(0,0,0,.12);
+  display: block;
+  min-width: 400px;
+  padding: 1rem;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media (min-width: 40rem) {
+  .content {
+    align-items: center;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    height: 100vh;
+    justify-content: flex-end;
+  }
+  .image {
+    display: none;
+  }
+  .panel {
+    margin-right: 2rem;
+  }
+}

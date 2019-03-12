@@ -1,64 +1,46 @@
 {
   "pages": [
     {
-      "slug": "",
-      "name": "Home",
-      "layers": [
-        {
-          "type": "a",
-          "href": "#/",
-          "innerHTML": "Home",
-          "style": {
-            "background-color": "red",
-            "height": "20%",
-            "left": "5%",
-            "top": "5%",
-            "width": "20%"
-          }
-        },
-        {
-          "type": "a",
-          "href": "#/kitchen",
-          "innerHTML": "Kitchen",
-          "style": {
-            "background-color": "blue",
-            "height": "20%",
-            "left": "50%",
-            "top": "40%",
-            "width": "20%"
-          }
-        }
-      ]
+      "path": "",
+      "type": "page",
+      "data" : {
+        "name": "Home",
+        "description": "Everything under one roof",
+        "bgImage": "/assets/images/home.jpg",
+        "pathNext": "/kitchen"
+      }
     },
     {
-      "slug": "kitchen",
-      "name": "Kitchen",
-      "layers": [
-        {
-          "type": "a",
-          "href": "#/",
-          "innerHTML": "Home",
-          "style": {
-            "background-color": "red",
-            "height": "10%",
-            "left": "10%",
-            "top": "10%",
-            "width": "10%"
-          }
-        },
-        {
-          "type": "a",
-          "href": "#/kitchen",
-          "innerHTML": "Kitchen",
-          "style": {
-            "background-color": "blue",
-            "height": "30%",
-            "left": "40%",
-            "top": "30%",
-            "width": "30%"
-          }
-        }
-      ]
+      "path": "kitchen",
+      "type": "page",
+      "data" : {
+        "name": "Kitchen",
+        "description": "Delicious food is made here",
+        "bgImage": "/assets/images/kitchen.jpg",
+        "pathNext": "/garden",
+        "pathPrev": "/"
+      }
+    },
+    {
+      "path": "garden",
+      "type": "page",
+      "data" : {
+        "name": "Garden",
+        "description": "Looking at nature",
+        "bgImage": "/assets/images/garden.jpg",
+        "pathNext": "/bathroom",
+        "pathPrev": "/kitchen"
+      }
+    },
+    {
+      "path": "bathroom",
+      "type": "page",
+      "data" : {
+        "name": "Bathroom",
+        "description": "Get ready here!",
+        "bgImage": "/assets/images/bathroom.jpg",
+        "pathPrev": "/garden"
+      }
     }
   ]
 }
