@@ -4,14 +4,16 @@ import { trigger, stagger, animate, style, query, transition } from '@angular/an
 
 import { ApiService } from '../shared/api.service';
 
+export class PageData {
+  name: string;
+  description: string;
+  bgImage: string;
+  pathNext: string;
+  pathPrev: string;
+}
+
 export class Page {
-  data: {
-    name: string;
-    description: string;
-    bgImage: string;
-    pathNext: string;
-    pathPrev: string;
-  };
+  data: PageData;
   path: string;
   type: string;
 }
@@ -40,7 +42,7 @@ export const pageTransition = trigger('pageTransition', [
 })
 export class PageComponent implements OnInit {
   @HostBinding('@pageTransition') transition = '';
-  public page: Page;
+  public page: PageData;
 
   constructor(
     private api: ApiService,
@@ -48,12 +50,9 @@ export class PageComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.route.data.subscribe((routeData) => {
-      this.api.get('assets/json/navigation.json', 'pages').subscribe(pages => {
-        this.page = pages.filter((page: Page) => {
-          return page.data.name === routeData.name;
-        })[0];
-      });
+    this.route.data.subscribe((routeData: PageData) => {
+      console.log('routeData', routeData);
+      this.page = routeData;
     });
   }
 

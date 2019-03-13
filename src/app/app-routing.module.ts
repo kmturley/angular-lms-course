@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+// each lazy module must be included at build time to ensure a bundle is created
 const routes: Routes = [
   {
     pathMatch: 'full',

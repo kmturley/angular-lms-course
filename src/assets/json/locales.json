@@ -1,0 +1,12 @@
+{
+  "locales": [
+    {
+      "name": "English (US)",
+      "path": "en"
+    },
+    {
+      "name": "French (France)",
+      "path": "fr"
+    }
+  ]
+}

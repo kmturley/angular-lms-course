@@ -1,45 +1,45 @@
 {
   "pages": [
     {
-      "path": "",
+      "path": "en",
       "type": "page",
       "data" : {
         "name": "Home",
         "description": "Everything under one roof",
         "bgImage": "assets/images/home.jpg",
-        "pathNext": "/kitchen"
+        "pathNext": "/en/kitchen"
       }
     },
     {
-      "path": "kitchen",
+      "path": "en/kitchen",
       "type": "page",
       "data" : {
         "name": "Kitchen",
         "description": "Delicious food is made here",
         "bgImage": "assets/images/kitchen.jpg",
-        "pathNext": "/garden",
-        "pathPrev": "/"
+        "pathNext": "/en/garden",
+        "pathPrev": "/en/"
       }
     },
     {
-      "path": "garden",
+      "path": "en/garden",
       "type": "page",
       "data" : {
         "name": "Garden",
         "description": "Looking at nature",
         "bgImage": "assets/images/garden.jpg",
-        "pathNext": "/bathroom",
-        "pathPrev": "/kitchen"
+        "pathNext": "/en/bathroom",
+        "pathPrev": "/en/kitchen"
       }
     },
     {
-      "path": "bathroom",
+      "path": "en/bathroom",
       "type": "page",
       "data" : {
         "name": "Bathroom",
         "description": "Get ready here!",
         "bgImage": "assets/images/bathroom.jpg",
-        "pathPrev": "/garden"
+        "pathPrev": "/en/garden"
       }
     }
   ]

@@ -1,11 +1,11 @@
-<div class="content" [style.backgroundImage]="'url('+ page.data.bgImage +')'">
-  <img [src]="page.data.bgImage" class="image" alt="Image" />
+<div class="content" [style.backgroundImage]="'url('+ page.bgImage +')'">
+  <img [src]="page.bgImage" class="image" alt="Image" />
   <div class="panel">
-    <h1>{{ page.data.name }}</h1>
-    <p>{{ page.data.description }}</p>
+    <h1>{{ page.name }}</h1>
+    <p>{{ page.description }}</p>
     <div class="buttons">
-      <button [routerLink]="page.data.pathPrev" [disabled]="!page.data.pathPrev" class="button-prev">Previous</button>
-      <button [routerLink]="page.data.pathNext" [disabled]="!page.data.pathNext" class="button-next">Next</button>
+      <button [routerLink]="page.pathPrev" [disabled]="!page.pathPrev" class="button-prev">Previous</button>
+      <button [routerLink]="page.pathNext" [disabled]="!page.pathNext" class="button-next">Next</button>
     </div>
   </div>
 </div>

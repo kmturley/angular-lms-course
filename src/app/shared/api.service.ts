@@ -7,23 +7,21 @@ import { Observable, of } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  data = {
-    pages: []
-  };
+  data = {};
 
   constructor(
     private http: HttpClient
   ) {}
 
   get(url, id): Observable<any> {
-    if (this.data[id].length) {
-      return of(this.data[id]);
+    if (this.data[url]) {
+      return of(this.data[url]);
     } else {
       console.log('ApiService.get', url, id);
       return this.http.get(url).pipe(
         map((data) => {
-          this.data[id] = data[id];
-          return this.data[id];
+          this.data[url] = data[id];
+          return this.data[url];
         })
       );
     }

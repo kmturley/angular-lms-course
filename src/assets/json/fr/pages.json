@@ -1,0 +1,46 @@
+{
+  "pages": [
+    {
+      "path": "fr",
+      "type": "page",
+      "data" : {
+        "name": "Maison",
+        "description": "Tout sous un meme toit",
+        "bgImage": "assets/images/home.jpg",
+        "pathNext": "/fr/cuisine"
+      }
+    },
+    {
+      "path": "fr/cuisine",
+      "type": "page",
+      "data" : {
+        "name": "Cuisine",
+        "description": "La nourriture delicieuse est faite ici",
+        "bgImage": "assets/images/kitchen.jpg",
+        "pathNext": "/fr/jardin",
+        "pathPrev": "/fr/"
+      }
+    },
+    {
+      "path": "fr/jardin",
+      "type": "page",
+      "data" : {
+        "name": "Jardin",
+        "description": "Regarder la nature",
+        "bgImage": "assets/images/garden.jpg",
+        "pathNext": "/fr/salle-de-bains",
+        "pathPrev": "/fr/cuisine"
+      }
+    },
+    {
+      "path": "fr/salle-de-bains",
+      "type": "page",
+      "data" : {
+        "name": "Salle de Bains",
+        "description": "Preparez-vous ici!",
+        "bgImage": "assets/images/bathroom.jpg",
+        "pathPrev": "/fr/jardin"
+      }
+    }
+  ]
+}
