@@ -1,12 +1,14 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, HostBinding, OnInit } from '@angular/core';
+import { Component, ElementRef, HostBinding, OnInit, ViewChild } from '@angular/core';
 import { trigger, stagger, animate, style, query, transition } from '@angular/animations';
+import { lottie } from 'lottie-web/build/player/lottie';
 
 import { ApiService } from '../shared/api.service';
 
 export class PageData {
   name: string;
   description: string;
+  bgAnimation: string;
   bgImage: string;
   pathNext: string;
   pathPrev: string;
@@ -41,8 +43,12 @@ export const pageTransition = trigger('pageTransition', [
   animations: [ pageTransition ],
 })
 export class PageComponent implements OnInit {
+  @ViewChild('content', {read: ElementRef}) content: ElementRef;
   @HostBinding('@pageTransition') transition = '';
   public page: PageData;
+  public lottieConfig: object;
+  private anim: any;
+  private animationSpeed = 1;
 
   constructor(
     private api: ApiService,
@@ -53,7 +59,36 @@ export class PageComponent implements OnInit {
     this.route.data.subscribe((routeData: PageData) => {
       console.log('routeData', routeData);
       this.page = routeData;
+      if (this.page.bgAnimation) {
+        this.lottieConfig = {
+          path: this.page.bgAnimation,
+          renderer: 'canvas',
+          autoplay: true,
+          loop: true
+        };
+      }
     });
+  }
+
+  handleAnimation(anim: any) {
+    this.anim = anim;
+  }
+
+  stop() {
+    this.anim.stop();
+  }
+
+  play() {
+    this.anim.play();
+  }
+
+  pause() {
+    this.anim.pause();
+  }
+
+  setSpeed(speed: number) {
+    this.animationSpeed = speed;
+    this.anim.setSpeed(speed);
   }
 
 }

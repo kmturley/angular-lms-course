@@ -6,7 +6,7 @@
       "data" : {
         "name": "Home",
         "description": "Everything under one roof",
-        "bgImage": "assets/images/home.jpg",
+        "bgAnimation": "https://labs.nearpod.com/bodymovin/demo/markus/isometric/markus2.json",
         "pathNext": "/en/kitchen"
       }
     },

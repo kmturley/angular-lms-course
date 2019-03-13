@@ -1,5 +1,23 @@
-<div class="content" [style.backgroundImage]="'url('+ page.bgImage +')'">
-  <img [src]="page.bgImage" class="image" alt="Image" />
+<div class="content">
+  <div class="background">
+    <img *ngIf="page.bgImage" [src]="page.bgImage" class="image" alt="Image" />
+    <lottie-animation-view
+      *ngIf="page.bgAnimation"
+      class="animation"
+      [options]="lottieConfig"
+      (animCreated)="handleAnimation($event)">
+    </lottie-animation-view>
+  </div>
+  <!-- <div id="player">
+    <p>Speed: x{{animationSpeed}}</p>
+    <div class="range-container">
+    <input #range type="range" value="1" min="0" max="3" step="0.5"
+      (change)="setSpeed(range.value)">
+    </div>
+    <button (click)="stop()">stop</button>
+    <button (click)="pause()">pause</button>
+    <button (click)="play()">play</button>
+  </div> -->
   <div class="panel">
     <h1>{{ page.name }}</h1>
     <p>{{ page.description }}</p>

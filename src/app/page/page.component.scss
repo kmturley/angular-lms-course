@@ -1,10 +1,6 @@
-.content {
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
+.animation,
 .image {
-  max-width: 100%;
+  width: 100%;
 }
 
 .panel {
@@ -23,17 +19,22 @@
 @media (min-width: 40rem) {
   .content {
     align-items: center;
-    background-position: center;
-    background-size: cover;
     display: flex;
     height: 100vh;
     justify-content: flex-end;
+    position: relative;
   }
-  .image {
-    display: none;
+  .background {
+    height: 100vh;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100vw;
+    z-index: 1;
   }
   .panel {
     margin-right: 2rem;
     min-width: 400px;
+    z-index: 2;
   }
 }
