@@ -25,7 +25,8 @@
             "assets": [
               "src/favicon.ico",
               "src/assets",
-              "src/imsmanifest.xml"
+              "src/imsmanifest.xml",
+              "src/offline-api.js"
             ],
             "styles": [
               "src/styles.scss"
@@ -35,6 +36,11 @@
           },
           "configurations": {
             "production": {
+              "assets": [
+                "src/favicon.ico",
+                "src/assets",
+                "src/imsmanifest.xml"
+              ],
               "fileReplacements": [
                 {
                   "replace": "src/environments/environment.ts",
