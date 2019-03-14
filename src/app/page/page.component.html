@@ -1,12 +1,14 @@
 <div class="content">
-  <div class="background">
-    <img *ngIf="page.bgImage" [src]="page.bgImage" class="image" alt="Image" />
-    <lottie-animation-view
-      *ngIf="page.bgAnimation"
-      class="animation"
-      [options]="lottieConfig"
-      (animCreated)="handleAnimation($event)">
+  <div class="content-animated" *ngIf="page.bgAnimation" [style.backgroundImage]="'url(' + page.bgImage + ')'">
+      <lottie-animation-view
+        *ngIf="page.bgAnimation"
+        class="animation"
+        [options]="lottieConfig"
+        (animCreated)="handleAnimation($event)">
     </lottie-animation-view>
+  </div>
+  <div class="content-static" *ngIf="!page.bgAnimation" [style.backgroundImage]="'url(' + page.bgImage + ')'">
+    <img *ngIf="page.bgImage" [src]="page.bgImage" class="image" alt="Image" />
   </div>
   <!-- <div id="player">
     <p>Speed: x{{animationSpeed}}</p>

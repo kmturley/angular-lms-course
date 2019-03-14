@@ -7,6 +7,7 @@
         "name": "Maison",
         "description": "Tout sous un meme toit",
         "bgImage": "assets/images/home.jpg",
+        "bgAnimation": "https://labs.nearpod.com/bodymovin/demo/markus/isometric/markus2.json",
         "pathNext": "/fr/cuisine"
       }
     },

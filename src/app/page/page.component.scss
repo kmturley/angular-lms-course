@@ -1,7 +1,31 @@
+// .background {
+//   overflow: hidden;
+//   position: relative;
+//   z-index: 1;
+// }
+
+.content-animated,
+.content-static {
+  background-position: center;
+  background-size: cover;
+}
+
+.content-static .image {
+  visibility: hidden;
+}
+
 .animation,
 .image {
+  display: block;
   width: 100%;
 }
+
+// .background-animated .image {
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   z-index: -1;
+// }
 
 .panel {
   background-color: #fff;
@@ -24,13 +48,13 @@
     justify-content: flex-end;
     position: relative;
   }
-  .background {
+  .content-animated,
+  .content-static {
     height: 100vh;
     left: 0;
     position: absolute;
     top: 0;
     width: 100vw;
-    z-index: 1;
   }
   .panel {
     margin-right: 2rem;
