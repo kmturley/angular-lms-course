@@ -17,7 +17,6 @@ export class ApiService {
     if (this.data[url]) {
       return of(this.data[url]);
     } else {
-      console.log('ApiService.get', url, id);
       return this.http.get(url).pipe(
         map((data) => {
           this.data[url] = data[id];

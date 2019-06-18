@@ -1,4 +1,4 @@
 <app-navigation></app-navigation>
-<div [@routerTransition]="prepareRoute(outlet)" >
+<div [@routerTransition]="prepareRoute(outlet)" (@routerTransition.start)="routeStart($event)" (@routerTransition.done)="routeDone($event)">
   <router-outlet #outlet="outlet"></router-outlet>
 </div>

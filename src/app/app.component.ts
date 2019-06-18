@@ -1,4 +1,4 @@
-import {sequence, trigger, stagger, animate, style, group, query, transition, animateChild} from '@angular/animations';
+import { sequence, trigger, animate, style, group, query, transition, animateChild } from '@angular/animations';
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 
@@ -52,5 +52,13 @@ export class AppComponent implements OnInit, OnDestroy {
 
   prepareRoute(outlet: RouterOutlet) {
     return outlet && outlet.activatedRouteData && outlet.activatedRouteData.name;
+  }
+
+  routeStart(event) {
+    console.log('routeStart', event);
+  }
+
+  routeDone(event) {
+    console.log('routeDone', event);
   }
 }

@@ -1,7 +1,6 @@
 import { ActivatedRoute } from '@angular/router';
-import { Component, ElementRef, HostBinding, OnInit, ViewChild } from '@angular/core';
-import { trigger, stagger, animate, style, query, transition } from '@angular/animations';
-import { lottie } from 'lottie-web/build/player/lottie';
+import { Component, ElementRef, HostBinding, HostListener, OnInit, ViewChild } from '@angular/core';
+import { animate, animateChild, group, sequence, stagger, style, transition, trigger, query } from '@angular/animations';
 
 import { ApiService } from '../shared/api.service';
 
@@ -25,13 +24,13 @@ export const pageTransition = trigger('pageTransition', [
     query('.panel', style({ opacity: 0 }), { optional: true }),
     query('.panel', stagger(300, [
       style({ transform: 'translateY(100px)' }),
-      animate('500ms cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0px)', opacity: 1})),
+      animate('500ms 1.5s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(0px)', opacity: 1})),
     ]), { optional: true }),
   ]),
   transition(':leave', [
     query('.panel', stagger(300, [
       style({ transform: 'translateY(0px)', opacity: 1 }),
-      animate('500ms cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(100px)', opacity: 0})),
+      animate('500ms 1.5s cubic-bezier(.75,-0.48,.26,1.52)', style({transform: 'translateY(100px)', opacity: 0})),
     ]), { optional: true }),
   ])
 ]);
@@ -43,12 +42,23 @@ export const pageTransition = trigger('pageTransition', [
   animations: [ pageTransition ],
 })
 export class PageComponent implements OnInit {
-  @ViewChild('content', {read: ElementRef}) content: ElementRef;
-  @HostBinding('@pageTransition') transition = '';
   public page: PageData;
   public lottieConfig: object;
   private anim: any;
   private animationSpeed = 1;
+  @ViewChild('content', {read: ElementRef}) content: ElementRef;
+  @HostBinding('@pageTransition') transition = '';
+
+  @HostListener('@pageTransition.start', ['$event'])
+  animStart(event) {
+    console.log('PageComponent.animStart');
+  }
+
+  @HostListener('@pageTransition.done', ['$event'])
+  animDone(event) {
+    console.log('PageComponent.animDone');
+    this.play();
+  }
 
   constructor(
     private api: ApiService,
@@ -64,7 +74,7 @@ export class PageComponent implements OnInit {
           path: this.page.bgAnimation,
           renderer: 'canvas',
           autoplay: true,
-          loop: true
+          loop: false
         };
       }
     });
@@ -79,7 +89,10 @@ export class PageComponent implements OnInit {
   }
 
   play() {
-    this.anim.play();
+    console.log('play', this.anim);
+    if (this.anim) {
+      this.anim.goToAndPlay(0);
+    }
   }
 
   pause() {
